@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Ung Dung Quan Ly Sach</title>
+  <link th:href="@{/css/style.css}" rel="stylesheet"/>
+  <link th:replace="layout :: link-css"/>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        Trang chủ ứng dụng quản lí sach - Kết nối CSDL MYSQL
+      </a>
+
+    </div>
+    <a th:href="@{/books}">Back To List</a>
+  </nav>
+</div>
+<th:block th:replace="layout::link-css"></th:block>
+</body>
+</html>

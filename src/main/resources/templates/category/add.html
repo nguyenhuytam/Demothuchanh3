@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Book</title>
+  <link th:replace="layout :: link-css"/>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<div class="container">
+  <h1>Add Book</h1>
+  <form th:action="@{/category/add}" th:object="${category}" method="post">
+    <div class="col-6 mb-3">
+      <label class="form-label" for="name">Name:</label>
+      <input class="form-control" type="text" th:field="*{name}" id="name">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save">
+  </form>
+  <br>
+  <a th:href="@{/books}">Back To List</a>
+</div>
+</body>
+</html>
