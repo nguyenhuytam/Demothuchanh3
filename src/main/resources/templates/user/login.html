@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link th:replace="layout :: link-css"/>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+<div class="container">
+    <h1>Edit</h1>
+    <form th:action="@{/login}" method="post">
+        <fieldset>
+        <legend>Please login</legend>
+        <div th:if="${param.error}" class="alert alert-danger">
+            Invalid username and password
+        </div>
+        <div th:if="${param.logout}" class="alert alert-success">
+            You have been logger out.
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="username">Username:</label>
+            <input class="form-control" type="text" id="username" name="username">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password:</label>
+            <input class="form-control" type="text" id="password" name="password">
+        </div>
+        <div class="mb-3">
+            <input type="checkbox" name="remember-me" id="remember-me">
+            <label class="form-label" for="remember-me">Remember me:</label>
+        </div>
+        <div class="d-grid qap-2 form-action">
+            <button type="submit" name="btn btn-primary"> Login</button>
+            <a class="text-primary text-center" href="/register"> Don't have account . Sign up?</a>
+        </div>
+        </fieldset>
+    </form>
+    <br>
+    <a th:href="@{/books}">Back To List</a>
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 package nguyenhuytam.thuchanh3.entity;
-
+import nguyenhuytam.thuchanh3.Validator.annotation.ValidUserId;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.Generated;
 import nguyenhuytam.thuchanh3.Validator.annotation.ValidCategoryId;
+import nguyenhuytam.thuchanh3.Validator.annotation.ValidUsername;
 import org.hibernate.MappingException;
 import org.hibernate.service.spi.InjectService;
 
@@ -36,5 +37,9 @@ public class Book {
     @JoinColumn(name = "category_id")
     @ValidCategoryId
     private Category category;
+@ManyToOne
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    @ValidUserId
+    private User user;
 
 }
